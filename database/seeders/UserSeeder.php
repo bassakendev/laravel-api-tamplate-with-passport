@@ -21,8 +21,6 @@ class UserSeeder extends Seeder
             'activation_token' => 'john',
         ]);
 
-        $user1->wallet->add(150000.00);
-
         $user2  = User::create([
             'first_name' => 'User2',
             'last_name' => 'user2',
@@ -31,8 +29,6 @@ class UserSeeder extends Seeder
             'password' => bcrypt('password'),
             'activation_token' => 'john',
         ]);
-
-        $user2->wallet->add(45000.00);
 
         $user3  = User::create([
             'first_name' => 'User3',
@@ -43,7 +39,5 @@ class UserSeeder extends Seeder
             'password' => bcrypt('password'),
             'activation_token' => 'john',
         ]);
-
-        $user3->wallet->add(50.00);
     }
 }

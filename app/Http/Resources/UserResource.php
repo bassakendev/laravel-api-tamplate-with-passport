@@ -26,11 +26,6 @@ class UserResource extends JsonResource
             'email' => $this->email,
             'phone' => $this->phone,
             'country' => $this->country,
-            'wallets' => [
-                'main_wallet' => new WalletResource($this->wallet),
-                'loan_wallet' => new WalletResource($this->loanWallet),
-                'saving_wallet' => new WalletResource($this->savingWallet),
-            ],
             'avatar' => $this->avatar,
             'referrer_id' => $this->referrer_id,
             // 'referrer' => $this->referrer,

@@ -6,13 +6,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\UserPubController;
-use App\Http\Controllers\TransactionController;
-use App\Http\Controllers\UserDashboardController;
-use App\Http\Controllers\Transaction\LoanController;
-use App\Http\Controllers\Transaction\DepositController;
-use App\Http\Controllers\Transaction\TransferController;
-use App\Http\Controllers\Transaction\SavingGoalController;
-use App\Http\Controllers\transaction\SavingGroupController;
 
 /*
 |--------------------------------------------------------------------------
@@ -67,6 +60,10 @@ Route::prefix("private")->middleware("auth:api")->controller(AuthController::cla
     Route::patch('/update-profile', 'updateProfile');
 });
 
+//setting route
+Route::prefix("settings")->middleware("api")->controller(SettingController::class)->group(function () {
+    Route::get('/', 'get');
+});
 
 //Pub route
 Route::prefix("pubs")->middleware("auth:api")->controller(UserPubController::class)->group(function () {

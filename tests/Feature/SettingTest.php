@@ -31,7 +31,7 @@ class SettingTest extends TestCase
      */
     public function testCanGetSettings()
     {
-        $response = $this->get('api/settings/get');
+        $response = $this->get('api/settings');
 
         $response->assertStatus(200);
     }
