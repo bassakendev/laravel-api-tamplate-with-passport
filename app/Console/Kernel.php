@@ -12,10 +12,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule): void
     {
-        $schedule->command('app:saving-goal-status-updater')->hourly();
-        $schedule->command('app:normal-saving-group-status-updater')->hourly();
-        $schedule->command('app:challenge-saving-group-status-updater')->hourly();
-        $schedule->command('app:transaction-status-updater')->hourly();
+        // $schedule->command('test')->hourly();
     }
 
     /**
