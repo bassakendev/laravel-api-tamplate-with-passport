@@ -4,7 +4,7 @@ namespace App\Utils;
 
 use App\Models\Setting;
 
-abstract class TransactionUtils
+abstract class SettingUtils
 {
 
     /**

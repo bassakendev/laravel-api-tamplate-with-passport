@@ -67,64 +67,6 @@ Route::prefix("private")->middleware("auth:api")->controller(AuthController::cla
     Route::patch('/update-profile', 'updateProfile');
 });
 
-//Savings goal routes
-Route::prefix('savings')->middleware("auth:api")->controller(SavingGoalController::class)->group(function () {
-    Route::post('/add', 'create');
-    Route::get('/list', 'list');
-    Route::get('{id}/details', 'details');
-    Route::post('{id}/update', 'update');
-    Route::patch('{id}/cancel', 'cancel');
-});
-
-//Loan routes
-Route::prefix('loans')->middleware("auth:api")->controller(LoanController::class)->group(function () {
-    Route::post('/{savingGoalId}/ask', 'makeLoanWithSavingGoalAsCollateral');
-    Route::get('list', 'list');
-    Route::get('{id}/details', 'details');
-    Route::post('{id}/refund', 'update');
-});
-
-//Setting routes
-Route::prefix('settings')->middleware("api")->controller(SettingController::class)->group(function () {
-    Route::get('/get', 'get');
-});
-
-//Saving group routes
-Route::prefix('groups')->middleware("auth:api")->controller(SavingGroupController::class)->group(function () {
-    Route::get('list', 'list');
-    Route::post('create-normal', 'newNormalSavingGroup');
-    Route::post('create-challenge', 'newChallengeSavingGroup');
-    Route::patch('add-member/{userToAddId}/{groupId}', 'addMember');
-    Route::patch('{groupId}/normal-cancel', 'cancelNormalParticipation');
-    Route::patch('{groupId}/challenge-cancel', 'cancelCallengeParticipation');
-    Route::post('{groupId}/update', 'upgradeContribution');
-    Route::get('{groupId}/details', 'details');
-    Route::patch('join/{groupId}', 'joinChallengeGroup');
-});
-
-//Dashboard routes
-Route::prefix('dashboard')->middleware("auth:api")->controller(UserDashboardController::class)->group(function () {
-    Route::get('common', 'common');
-});
-
-//Transfer routes
-Route::prefix('transfer')->middleware("auth:api")->controller(TransferController::class)->group(function () {
-    Route::get('list', 'list');
-    Route::post('', 'transferTo');
-});
-
-//Deposite routes
-Route::prefix('deposit')->middleware("auth:api")->controller(DepositController::class)->group(function () {
-    Route::get('list', 'list');
-    Route::post('',
-        'deposit'
-    );
-});
-
-//Deposite routes
-Route::prefix('campay/ipn')->middleware("api")->controller(TransactionController::class)->group(function () {
-    Route::get('', 'update');
-});
 
 //Pub route
 Route::prefix("pubs")->middleware("auth:api")->controller(UserPubController::class)->group(function () {

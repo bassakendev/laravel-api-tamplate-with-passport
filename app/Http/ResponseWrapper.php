@@ -1,14 +1,15 @@
-<?php 
+<?php
 
-namespace App\Http; 
+namespace App\Http;
 
 /**
- *  Wraps a new response 
+ *  Wraps a new response
  *  @author <>
- *  
+ *
  */
 
-class ResponseWrapper {
+class ResponseWrapper
+{
 
     /**
      *  Returns a new response of the request
@@ -18,18 +19,19 @@ class ResponseWrapper {
      * @return \Illuminate\Http\JsonResponse
      */
 
-     public static function sendResponse($message, $data=[], $statusCode=200, $status="success") {
-           
-        $message = $message == 'F' ? 'Fetched data': $message;
-        
+    public static function sendResponse($message, $data = [], $statusCode = 200, $status = "success")
+    {
+
+        $message = $message == 'F' ? 'Fetched data' : $message;
+
         $responsePayload = [
-                'version' => 'v1',
-                'status'  => $status,
-                'statusCode' => $statusCode,
-                'message' => $message,
-                'data'    => $data  
-            ];
+            'version' => 'v1',
+            'status'  => $status,
+            'statusCode' => $statusCode,
+            'message' => $message,
+            'data'    => $data
+        ];
 
         return response()->json($responsePayload, $statusCode);
-     }
+    }
 }

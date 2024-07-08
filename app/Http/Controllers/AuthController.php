@@ -3,14 +3,10 @@
 namespace App\Http\Controllers;
 
 use Carbon\Carbon;
-use App\Models\City;
 use App\Models\User;
 use App\Models\Referral;
-use Illuminate\Support\Str;
-use App\Models\CategoryUser;
 use Illuminate\Http\Request;
 use App\Http\ResponseWrapper;
-use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Log;
 use App\Http\Resources\UserResource;
 use Illuminate\Support\Facades\Auth;
