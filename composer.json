@@ -9,7 +9,6 @@
         "dedoc/scramble": "^0.8.5",
         "doctrine/dbal": "^3.8",
         "guzzlehttp/guzzle": "^7.2",
-        "jeroennoten/laravel-adminlte": "^3.9",
         "laravel/framework": "^10.10",
         "laravel/passport": "^11.10",
         "laravel/sanctum": "^3.3",
