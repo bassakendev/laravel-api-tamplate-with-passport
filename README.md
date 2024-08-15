@@ -77,6 +77,6 @@ php artisan passport:client --personal
 
 php artisan migrate:fresh --seed --env=testing && php artisan migrate:fresh --seed && php artisan passport:client --personal
 
-## Test the initial APIs :
+## Testing the initial APIs :
 
 php artisan test

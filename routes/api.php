@@ -25,7 +25,7 @@ Route::middleware('auth:passport')->get('/user', function (Request $request) {
 Route::get('/', function () {
     $payload = [
         'version' => 'v1',
-        'vendor' => 'Ficedu',
+        'vendor' => 'App name',
         'message' => 'Hello welcome to our v1!'
     ];
     return response()->json($payload);
